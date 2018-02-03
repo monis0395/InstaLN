@@ -18,6 +18,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
         maven { url "https://www.jitpack.io" }
     }
 }
@@ -28,8 +29,14 @@ task clean(type: Delete) {
 
 //Define version in a single place
 ext {
+    compileSdkVersion = 26
+    minSdkVersion = 16
+    targetSdkVersion = 26
+
     calligraphyVersion = '2.2.0'
     placeholderviewVersion = '0.6.1'
     androidUtils = '3.0.32'
     crux = '2.0.1'
+    AAVersion = '4.4.0'
+    paperDb = '2.6'
 }
