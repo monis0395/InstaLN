@@ -5,10 +5,6 @@ import java.util.List;
 import io.paperdb.Book;
 import io.paperdb.Paper;
 
-/**
- * Created by monis.q on 18-02-2018.
- */
-
 public class AppPaperDB implements PaperDB {
 
     @Override

@@ -4,10 +4,6 @@ import java.util.List;
 
 import io.paperdb.Book;
 
-/**
- * Created by monis.q on 18-02-2018.
- */
-
 public interface PaperDB {
 
     String NOVEL_BOOK = "novel";

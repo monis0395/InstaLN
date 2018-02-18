@@ -7,10 +7,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-/**
- * Created by monis.q on 04-02-2018.
- */
-
 public class JsoupUtils {
 
     public static Document getDocument(String urlString) throws IOException {

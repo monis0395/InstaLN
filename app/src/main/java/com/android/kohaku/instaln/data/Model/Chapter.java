@@ -2,10 +2,6 @@ package com.android.kohaku.instaln.data.Model;
 
 import lombok.Data;
 
-/**
- * Created by monis.q on 04-02-2018.
- */
-
 @Data
 public class Chapter {
 

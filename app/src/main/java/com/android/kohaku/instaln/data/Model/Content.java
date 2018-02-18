@@ -4,10 +4,6 @@ import org.jsoup.nodes.Document;
 
 import lombok.Data;
 
-/**
- * Created by monis.q on 04-02-2018.
- */
-
 @Data public class Content {
 
     public Content(String title, String content, Document document) {
