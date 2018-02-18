@@ -54,6 +54,7 @@ public class AppDataManager implements DataManager {
         if (contains(CONTENT_BOOK_NAME, contentKey)) {
             return readBook(CONTENT_BOOK_NAME, contentKey);
         }
+
         Content content = mArticleHelper.getContent(chapter);
         writeBook(CONTENT_BOOK_NAME, contentKey, content);
         return content;
