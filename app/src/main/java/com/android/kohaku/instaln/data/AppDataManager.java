@@ -43,7 +43,7 @@ public class AppDataManager implements DataManager {
     public Novel addNovel(String novelName, String urlString) throws IOException {
         Novel novel = new Novel(novelName, urlString);
         writeBook(NOVEL_BOOK_NAME, novelName, novel);//Todo: append a unique string to novelName
-        List<Chapter> chapterList = getChapterList(novel);
+        List<Chapter> chapterList = getAllChaptersList(novel);
         writeChapters(novelName, chapterList);
         return novel;
     }
@@ -72,8 +72,8 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public List<Chapter> getChapterList(Novel novel) throws IOException {
-        return mChapterHelper.getChapterList(novel);
+    public List<Chapter> getAllChaptersList(Novel novel) throws IOException {
+        return mChapterHelper.getAllChaptersList(novel);
     }
 
     @Override

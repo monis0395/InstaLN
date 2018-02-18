@@ -21,7 +21,7 @@ public class AppChapterHelper implements ChapterHelper {
 
     @Background
     @Override
-    public List<Chapter> getChapterList(Novel novel) throws IOException {
+    public List<Chapter> getAllChaptersList(Novel novel) throws IOException {
         List<Chapter> chapterList = Collections.emptyList();
         Chapter chapter;
         String chapterUrl;

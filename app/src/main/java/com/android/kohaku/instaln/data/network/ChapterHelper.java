@@ -12,5 +12,5 @@ import java.util.List;
 
 public interface ChapterHelper {
 
-    public List<Chapter> getChapterList(Novel novel) throws IOException;
+    public List<Chapter> getAllChaptersList(Novel novel) throws IOException;
 }
