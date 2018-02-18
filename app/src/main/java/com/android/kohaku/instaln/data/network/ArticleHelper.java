@@ -12,6 +12,4 @@ import java.io.IOException;
 public interface ArticleHelper {
 
     Content getContent(Chapter chapter) throws IOException;
-
-
 }
