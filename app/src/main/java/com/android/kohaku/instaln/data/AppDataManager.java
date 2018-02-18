@@ -7,17 +7,11 @@ import com.android.kohaku.instaln.data.database.PaperDB;
 import com.android.kohaku.instaln.data.network.ArticleHelper;
 import com.android.kohaku.instaln.data.network.ChapterHelper;
 
-import org.androidannotations.annotations.Background;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
 import io.paperdb.Book;
-
-/**
- * Created by monis.q on 04-02-2018.
- */
 
 public class AppDataManager implements DataManager {
 
@@ -34,7 +28,7 @@ public class AppDataManager implements DataManager {
     @Override
     public void updateChapters(Novel novel) throws IOException {
         String bookName = novel.getNovelName();
-        for (Chapter chapter : getAllChaptersList(novel)) {
+        for (Chapter chapter : getAllChaptersList(novel.getNovelUrl())) {
             writeBook(bookName, chapter.getChapterUrl(), chapter);
         }
     }
@@ -72,8 +66,8 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public List<Chapter> getAllChaptersList(Novel novel) throws IOException {
-        return mChapterHelper.getAllChaptersList(novel);
+    public List<Chapter> getAllChaptersList(String urlString) throws IOException {
+        return mChapterHelper.getAllChaptersList(urlString);
     }
 
     @Override
