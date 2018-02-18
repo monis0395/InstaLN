@@ -43,7 +43,7 @@ public class AppDataManager implements DataManager {
     @Background
     public Novel addNovel(String novelName, String urlString) throws IOException {
         Novel novel = new Novel(novelName, urlString);
-        writeBook(NOVEL_BOOK_NAME, novelName, novel);//Todo: append a unique string to novelName
+        writeBook(NOVEL_BOOK, novelName, novel);//Todo: append a unique string to novelName
         novel.setNovelSummary(getContent(urlString));
         updateChapters(novel);
         return novel;
@@ -51,22 +51,22 @@ public class AppDataManager implements DataManager {
 
     @Override
     public Content getContent(String contentUrl) throws IOException {
-        if (contains(CONTENT_BOOK_NAME, contentUrl)) {
-            return readBook(CONTENT_BOOK_NAME, contentUrl);
+        if (contains(CONTENT_BOOK, contentUrl)) {
+            return readBook(CONTENT_BOOK, contentUrl);
         }
 
         Content content = mArticleHelper.getContent(contentUrl);
-        writeBook(CONTENT_BOOK_NAME, contentUrl, content);
+        writeBook(CONTENT_BOOK, contentUrl, content);
         return content;
     }
 
     @Override
     public List<Novel> getAllNovel() {
-        List<String> novelNames = getAllKeys(NOVEL_BOOK_NAME);
+        List<String> novelNames = getAllKeys(NOVEL_BOOK);
         List<Novel> novelList = Collections.emptyList();
         Novel novelTempObject;
         for (String novelKey : novelNames) {
-            novelTempObject = readBook(NOVEL_BOOK_NAME, novelKey);
+            novelTempObject = readBook(NOVEL_BOOK, novelKey);
             novelList.add(novelTempObject);
         }
         return novelList;

@@ -10,8 +10,8 @@ import io.paperdb.Book;
 
 public interface PaperDB {
 
-    final String NOVEL_BOOK_NAME = "novel";
-    final String CONTENT_BOOK_NAME = "chapter";
+    String NOVEL_BOOK = "novel";
+    String CONTENT_BOOK = "chapter";
 
     <T> T readBook(String bookName, String key);
 
