@@ -18,9 +18,9 @@ public class AppArticleHelper implements ArticleHelper {
 
     @Background
     @Override
-    public Content getContent(Chapter chapter) throws IOException {
-        String rawHtml = JsoupUtils.getRawHtml(chapter.getChapterUrl());
-        Article article = ArticleExtractor.with(chapter.getChapterUrl(), rawHtml).extractContent().extractMetadata().article();
+    public Content getContent(String contentUrl) throws IOException {
+        String rawHtml = JsoupUtils.getRawHtml(contentUrl);
+        Article article = ArticleExtractor.with(contentUrl, rawHtml).extractContent().extractMetadata().article();
 
         return new Content(
                 article.title,

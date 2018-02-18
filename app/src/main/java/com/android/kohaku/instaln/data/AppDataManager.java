@@ -49,14 +49,13 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Content getContent(Chapter chapter) throws IOException {
-        String contentKey = chapter.getChapterUrl();
-        if (contains(CONTENT_BOOK_NAME, contentKey)) {
-            return readBook(CONTENT_BOOK_NAME, contentKey);
+    public Content getContent(String contentUrl) throws IOException {
+        if (contains(CONTENT_BOOK_NAME, contentUrl)) {
+            return readBook(CONTENT_BOOK_NAME, contentUrl);
         }
 
-        Content content = mArticleHelper.getContent(chapter);
-        writeBook(CONTENT_BOOK_NAME, contentKey, content);
+        Content content = mArticleHelper.getContent(contentUrl);
+        writeBook(CONTENT_BOOK_NAME, contentUrl, content);
         return content;
     }
 
