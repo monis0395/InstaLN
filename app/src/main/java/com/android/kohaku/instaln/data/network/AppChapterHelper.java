@@ -12,7 +12,6 @@ import java.util.List;
 
 public class AppChapterHelper implements ChapterHelper {
 
-
     @Override
     public List<Chapter> getAllChaptersList(String urlString) throws IOException {
         List<Chapter> chapterList = Collections.emptyList();
@@ -31,11 +30,9 @@ public class AppChapterHelper implements ChapterHelper {
                         chapterUrl,
                         chapterNumber
                 );
-
                 chapterList.add(chapter);
             }
         }
-
         return chapterList;
     }
 
