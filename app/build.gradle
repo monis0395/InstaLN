@@ -32,6 +32,8 @@ dependencies {
     annotationProcessor "org.androidannotations:androidannotations:$rootProject.AAVersion"
     compile "org.androidannotations:androidannotations-api:$rootProject.AAVersion"
 
+    compileOnly "org.projectlombok:lombok:$rootProject.lombok"
+
     // database
     implementation "io.paperdb:paperdb:$rootProject.paperDb"
 
