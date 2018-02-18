@@ -32,9 +32,10 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public void writeChapters(String chapterBookName, List<Chapter> chapterList) {
-        for (Chapter chapter : chapterList) {
-            writeBook(chapterBookName, chapter.getChapterUrl(), chapter);
+    public void updateChapters(Novel novel) throws IOException {
+        String bookName = novel.getNovelName();
+        for (Chapter chapter : getAllChaptersList(novel)) {
+            writeBook(bookName, chapter.getChapterUrl(), chapter);
         }
     }
 
@@ -43,8 +44,7 @@ public class AppDataManager implements DataManager {
     public Novel addNovel(String novelName, String urlString) throws IOException {
         Novel novel = new Novel(novelName, urlString);
         writeBook(NOVEL_BOOK_NAME, novelName, novel);//Todo: append a unique string to novelName
-        List<Chapter> chapterList = getAllChaptersList(novel);
-        writeChapters(novelName, chapterList);
+        updateChapters(novel);
         return novel;
     }
 

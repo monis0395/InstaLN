@@ -15,7 +15,7 @@ import java.util.List;
 
 public interface DataManager extends ArticleHelper, ChapterHelper, PaperDB {
 
-    public void writeChapters(String chapterBookName, List<Chapter> chapterList);
+    public void updateChapters(Novel novel) throws IOException;
 
     public Novel addNovel(String novelName, String urlString) throws IOException;
 
