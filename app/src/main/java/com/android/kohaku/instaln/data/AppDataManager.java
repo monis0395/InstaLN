@@ -26,6 +26,31 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
+    public <T> T readBook(String bookName, String key) {
+        return mPaperDB.readBook(bookName, key);
+    }
+
+    @Override
+    public <T> Book writeBook(String bookName, String key, T value) {
+        return mPaperDB.writeBook(bookName, key, value);
+    }
+
+    @Override
+    public boolean contains(String bookName, String key) {
+        return mPaperDB.contains(bookName, key);
+    }
+
+    @Override
+    public void delete(String bookName, String key) {
+        mPaperDB.delete(bookName, key);
+    }
+
+    @Override
+    public List<String> getAllKeys(String bookName) {
+        return mPaperDB.getAllKeys(bookName);
+    }
+
+    @Override
     public void updateChapters(Novel novel) throws IOException {
         String bookName = novel.getNovelName();
         for (Chapter chapter : getAllChaptersList(novel.getNovelUrl())) {
@@ -68,30 +93,5 @@ public class AppDataManager implements DataManager {
     @Override
     public List<Chapter> getAllChaptersList(String urlString) throws IOException {
         return mChapterHelper.getAllChaptersList(urlString);
-    }
-
-    @Override
-    public <T> T readBook(String bookName, String key) {
-        return mPaperDB.readBook(bookName, key);
-    }
-
-    @Override
-    public <T> Book writeBook(String bookName, String key, T value) {
-        return mPaperDB.writeBook(bookName, key, value);
-    }
-
-    @Override
-    public boolean contains(String bookName, String key) {
-        return mPaperDB.contains(bookName, key);
-    }
-
-    @Override
-    public void delete(String bookName, String key) {
-        mPaperDB.delete(bookName, key);
-    }
-
-    @Override
-    public List<String> getAllKeys(String bookName) {
-        return mPaperDB.getAllKeys(bookName);
     }
 }
