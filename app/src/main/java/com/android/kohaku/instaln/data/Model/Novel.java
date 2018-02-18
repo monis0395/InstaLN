@@ -17,4 +17,6 @@ public class Novel {
     String novelName;
 
     String novelUrl;
+
+    Content novelSummary;
 }
