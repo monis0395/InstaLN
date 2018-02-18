@@ -36,9 +36,9 @@ public class AppDataManager implements DataManager {
     @Override
     public Novel addNovel(String novelName, String urlString) throws IOException {
         Novel novel = new Novel(novelName, urlString);
-        writeBook(NOVEL_BOOK, novelName, novel);//Todo: append a unique string to novelName
         novel.setNovelSummary(getContent(urlString));
         updateChapters(novel);
+        writeBook(NOVEL_BOOK, novelName, novel);//Todo: append a unique string to novelName
         return novel;
     }
 
