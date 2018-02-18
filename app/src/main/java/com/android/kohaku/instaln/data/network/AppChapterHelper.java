@@ -15,7 +15,6 @@ public class AppChapterHelper implements ChapterHelper {
     @Override
     public List<Chapter> getAllChaptersList(String urlString) throws IOException {
         List<Chapter> chapterList = Collections.emptyList();
-        Chapter chapter;
         String chapterUrl;
         int chapterNumber = 0;
 
@@ -25,12 +24,11 @@ public class AppChapterHelper implements ChapterHelper {
             chapterUrl = chapterElement.absUrl("href");
             chapterNumber++;
             if (chapterUrl.contains(urlString)) {
-                chapter = new Chapter(
+                chapterList.add(new Chapter(
                         chapterElement.text(),
                         chapterUrl,
                         chapterNumber
-                );
-                chapterList.add(chapter);
+                ));
             }
         }
         return chapterList;
