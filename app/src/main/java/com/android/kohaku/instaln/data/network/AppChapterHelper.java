@@ -19,7 +19,6 @@ import java.util.List;
 public class AppChapterHelper implements ChapterHelper {
 
 
-    @Background
     @Override
     public List<Chapter> getAllChaptersList(Novel novel) throws IOException {
         List<Chapter> chapterList = Collections.emptyList();

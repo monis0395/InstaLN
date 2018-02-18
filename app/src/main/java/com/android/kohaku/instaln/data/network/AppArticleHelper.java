@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class AppArticleHelper implements ArticleHelper {
 
-    @Background
     @Override
     public Content getContent(String contentUrl) throws IOException {
         String rawHtml = JsoupUtils.getRawHtml(contentUrl);

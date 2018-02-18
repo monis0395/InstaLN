@@ -40,7 +40,6 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    @Background
     public Novel addNovel(String novelName, String urlString) throws IOException {
         Novel novel = new Novel(novelName, urlString);
         writeBook(NOVEL_BOOK, novelName, novel);//Todo: append a unique string to novelName
