@@ -1,6 +1,5 @@
 package com.android.kohaku.instaln.utils;
 
-import org.androidannotations.annotations.Background;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,8 +12,6 @@ import java.io.IOException;
  */
 
 public class JsoupUtils {
-
-    private static final String TAG = "contentValues";
 
     public static Document getDocument(String urlString) throws IOException {
         return Jsoup.connect(urlString).get();
