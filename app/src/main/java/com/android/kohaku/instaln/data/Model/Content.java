@@ -4,7 +4,8 @@ import org.jsoup.nodes.Document;
 
 import lombok.Data;
 
-@Data public class Content {
+@Data
+public class Content {
 
     public Content(String title, String content, Document document) {
         this.title = title;
