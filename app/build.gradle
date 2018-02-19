@@ -29,11 +29,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     // android annotations
-    annotationProcessor "org.androidannotations:androidannotations:$rootProject.AAVersion"
     compile "org.androidannotations:androidannotations-api:$rootProject.AAVersion"
+    annotationProcessor "org.androidannotations:androidannotations:$rootProject.AAVersion"
 
     compileOnly "org.projectlombok:lombok:$rootProject.lombok"
-
+    annotationProcessor "org.projectlombok:lombok:$rootProject.lombok"
     // database
     implementation "io.paperdb:paperdb:$rootProject.paperDb"
 
