@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.android.kohaku.instaln.InstaLNApp;
 import com.android.kohaku.instaln.R;
+import com.android.kohaku.instaln.data.DataManager;
 
 /**
  * Created by monis.q on 04-03-2018.
@@ -83,6 +85,11 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends App
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
 
+    }
+
+    @Override
+    public DataManager getDataManager() {
+        return ((InstaLNApp)getApplicationContext()).getDataManager();
     }
 
     @Override

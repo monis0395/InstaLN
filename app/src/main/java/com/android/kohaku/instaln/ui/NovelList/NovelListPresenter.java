@@ -25,19 +25,4 @@ public class NovelListPresenter extends BasePresenter<NovelListContract.View>
     public void addNovel() {
 
     }
-
-    @Override
-    public NovelListContract.View getView() {
-        return null;
-    }
-
-    @Override
-    public void onAttach(NovelListContract.View mvpView) {
-
-    }
-
-    @Override
-    public void onDetach() {
-
-    }
 }

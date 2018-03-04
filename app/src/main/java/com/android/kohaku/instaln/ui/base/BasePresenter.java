@@ -31,4 +31,9 @@ public class BasePresenter<V extends BaseContract.View>
     public void onDetach() {
         mMvpView = null;
     }
+
+    @Override
+    public DataManager getDataManager() {
+        return mDataManager;
+    }
 }

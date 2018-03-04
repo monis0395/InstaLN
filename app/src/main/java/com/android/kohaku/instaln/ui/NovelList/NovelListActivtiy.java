@@ -1,5 +1,8 @@
 package com.android.kohaku.instaln.ui.NovelList;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
 import com.android.kohaku.instaln.ui.base.BaseActivity;
 
 /**
@@ -9,6 +12,12 @@ import com.android.kohaku.instaln.ui.base.BaseActivity;
 public class NovelListActivtiy extends BaseActivity<NovelListPresenter>
         implements NovelListContract.View {
 
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     @Override
     public void showNovels() {
 
@@ -16,6 +25,6 @@ public class NovelListActivtiy extends BaseActivity<NovelListPresenter>
 
     @Override
     protected NovelListPresenter createPresent() {
-        return null;
+        return new NovelListPresenter(getDataManager());
     }
 }
