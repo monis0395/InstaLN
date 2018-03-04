@@ -23,4 +23,6 @@ public class InstaLNApp extends Application {
 
         CalligraphyConfig.initDefault(mCalligraphyConfig);
     }
+
+    public DataManager getDataManager() { return mDataManager; }
 }
