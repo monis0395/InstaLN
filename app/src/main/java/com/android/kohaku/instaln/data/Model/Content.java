@@ -7,16 +7,14 @@ import lombok.Data;
 @Data
 public class Content {
 
-    public Content(String title, String content, Document document) {
+    public Content(String title, String content) {
         this.title = title;
         this.content = content;
-        this.document = document;
     }
 
     String title;
 
     String content;
 
-    Document document;
 
 }

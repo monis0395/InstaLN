@@ -23,7 +23,7 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvit_novel_list_layout);
         mNovelView = findViewById(R.id.novelView);
-        mPresenter.loadNovels();
+        mPresenter.addNovel();
     }
 
     @Override
