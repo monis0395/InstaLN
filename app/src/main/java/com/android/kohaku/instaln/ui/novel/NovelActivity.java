@@ -9,24 +9,26 @@ import com.android.kohaku.instaln.data.AppDataManager;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
-import com.mindorks.placeholderview.annotations.View;
-
-import net.the4thdimension.android.Utils;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class NovelActivity extends BaseActivity<NovelPresenter> implements NovelContract.View {
 
-
-    @View(R.id.novelName)
+    @BindView(R.id.novelName)
     TextView novelNameTxt;
 
-    @View(R.id.summaryDetails)
+    @BindView(R.id.summaryDetails)
     TextView summaryDetailsTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novel);
+        setUnBinder(ButterKnife.bind(this));
+
         String novelName = getIntent().getStringExtra("novel");
         Novel novel = getDataManager().readBook(AppDataManager.NOVEL_BOOK, novelName);
 

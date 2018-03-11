@@ -16,6 +16,7 @@ import com.android.kohaku.instaln.InstaLNApp;
 import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.DataManager;
 
+import butterknife.Unbinder;
 /**
  * Created by monis.q on 04-03-2018.
  */
@@ -25,6 +26,7 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends App
 
     private ProgressDialog mProgressDialog;
     protected P mPresenter;
+    private Unbinder mUnBinder;
 
     protected abstract P createPresent();
 
@@ -92,8 +94,15 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends App
         return ((InstaLNApp)getApplicationContext()).getDataManager();
     }
 
+    public void setUnBinder(Unbinder unBinder) {
+        mUnBinder = unBinder;
+    }
+
     @Override
     protected void onDestroy() {
+        if (mUnBinder != null) {
+            mUnBinder.unbind();
+        }
         mPresenter.onDetach();
         super.onDestroy();
     }

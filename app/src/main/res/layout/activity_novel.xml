@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.kohaku.instaln.ui.novel.NovelActivity">
+    tools:context="com.android.kohaku.instaln.ui.novel.NovelActivity"
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/novelName"
-        android:layout_width="356dp"
-        android:layout_height="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
@@ -20,8 +21,8 @@
 
     <TextView
         android:id="@+id/summaryDetails"
-        android:layout_width="357dp"
-        android:layout_height="109dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/novelName"
         android:layout_alignRight="@+id/novelName"
         android:layout_below="@+id/summary"
