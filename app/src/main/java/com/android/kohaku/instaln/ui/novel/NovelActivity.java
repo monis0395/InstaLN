@@ -1,6 +1,5 @@
 package com.android.kohaku.instaln.ui.novel;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.android.kohaku.instaln.R;
@@ -23,12 +22,12 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
     }
 
     @Override
-    public void chapterClicked(Chapter chapter) {
+    public void refreshChapters() {
 
     }
 
     @Override
-    public void refreshChapters() {
+    public void chapterClicked(Chapter chapter) {
 
     }
 
