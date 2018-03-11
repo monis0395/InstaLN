@@ -6,9 +6,12 @@ import com.android.kohaku.instaln.data.DataManager;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BasePresenter;
+import com.android.kohaku.instaln.utils.InstaUtils;
 
 import java.io.IOException;
 import java.util.List;
+
+import static com.android.kohaku.instaln.data.database.PaperDB.NOVEL_BOOK;
 
 /**
  * Created by monis.q on 11-03-2018.
@@ -18,6 +21,11 @@ public class NovelPresenter extends BasePresenter<NovelContract.View>
         implements NovelContract.Presenter {
     public NovelPresenter(DataManager dataManager) {
         super(dataManager);
+    }
+
+    @Override
+    public Novel getNovel(String novelName) {
+        return getDataManager().readBook(NOVEL_BOOK, InstaUtils.urlEncode(novelName));
     }
 
     @Override

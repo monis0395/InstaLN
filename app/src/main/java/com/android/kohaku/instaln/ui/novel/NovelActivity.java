@@ -9,6 +9,7 @@ import com.android.kohaku.instaln.data.AppDataManager;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
+import com.android.kohaku.instaln.utils.InstaUtils;
 
 import java.util.List;
 
@@ -29,8 +30,12 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
         setContentView(R.layout.activity_novel);
         setUnBinder(ButterKnife.bind(this));
 
+        setUp();
+    }
+
+    private void setUp() {
         String novelName = getIntent().getStringExtra("novelName");
-        Novel novel = getDataManager().readBook(AppDataManager.NOVEL_BOOK, novelName);
+        Novel novel = mPresenter.getNovel(novelName);
 
         novelNameTxt.setText(novel.getNovelName());
         summaryDetailsTxt.setText(novel.getNovelSummary().getContent());

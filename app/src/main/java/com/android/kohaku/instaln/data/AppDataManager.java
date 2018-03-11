@@ -30,7 +30,7 @@ public class AppDataManager implements DataManager {
 
     @Override
     public <T> T readBook(String bookName, String key) {
-        return mPaperDB.readBook(bookName, InstaUtils.urlEncode(key));
+        return mPaperDB.readBook(bookName, key);
     }
 
     @Override
@@ -40,12 +40,12 @@ public class AppDataManager implements DataManager {
 
     @Override
     public boolean contains(String bookName, String key) {
-        return mPaperDB.contains(bookName, InstaUtils.urlEncode(key));
+        return mPaperDB.contains(bookName, key);
     }
 
     @Override
     public void delete(String bookName, String key) {
-        mPaperDB.delete(bookName, InstaUtils.urlEncode(key));
+        mPaperDB.delete(bookName, key);
     }
 
     @Override

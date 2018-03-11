@@ -18,6 +18,7 @@ public interface NovelContract {
     }
 
     interface Presenter extends BaseContract.Presenter<View> {
+        Novel getNovel(String novelName);
         void loadChapters(Novel novel);
         void updateChapters(Novel novel);
     }
