@@ -99,6 +99,18 @@ public class AppDataManager implements DataManager {
         return novelList;
     }
 
+    public List<Chapter> getAllChapters(Novel novel) throws IOException {
+        String bookName = novel.getNovelName();
+        List<String> chapterKeys = getAllKeys(bookName);
+        List<Chapter> chapters = new ArrayList<>();
+        Chapter chapterTempObject;
+        for (String chapterKey : chapterKeys) {
+            chapterTempObject = readBook(bookName, chapterKey);
+            chapters.add(chapterTempObject);
+        }
+        return chapters;
+    };
+
     @Override
     public List<Chapter> getAllChaptersList(String urlString) throws IOException {
         return mChapterHelper.getAllChaptersList(urlString);
