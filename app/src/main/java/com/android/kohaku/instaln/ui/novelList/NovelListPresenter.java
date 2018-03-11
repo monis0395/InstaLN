@@ -1,8 +1,6 @@
-package com.android.kohaku.instaln.ui.NovelList;
+package com.android.kohaku.instaln.ui.novelList;
 
 import com.android.kohaku.instaln.data.DataManager;
-import com.android.kohaku.instaln.ui.base.BaseActivity;
-import com.android.kohaku.instaln.ui.base.BaseContract;
 import com.android.kohaku.instaln.ui.base.BasePresenter;
 
 /**

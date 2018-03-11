@@ -1,4 +1,4 @@
-package com.android.kohaku.instaln.ui.NovelList;
+package com.android.kohaku.instaln.ui.novelList;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

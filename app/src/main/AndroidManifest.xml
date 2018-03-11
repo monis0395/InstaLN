@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name="com.android.kohaku.instaln.ui.NovelList.NovelListActivity"
+            android:name="com.android.kohaku.instaln.ui.novelList.NovelListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
