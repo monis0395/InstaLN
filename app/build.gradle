@@ -34,9 +34,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    // android annotations
-    compile "org.androidannotations:androidannotations-api:$rootProject.AAVersion"
-    annotationProcessor "org.androidannotations:androidannotations:$rootProject.AAVersion"
+    //background task
+    compile "com.github.inaka:TinyTask:$rootProject.tinyTask"
 
     compileOnly "org.projectlombok:lombok:$rootProject.lombok"
     annotationProcessor "org.projectlombok:lombok:$rootProject.lombok"

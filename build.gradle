@@ -34,6 +34,7 @@ ext {
     targetSdkVersion = 26
 
     AAVersion = '4.4.0'
+    tinyTask = 'v1.0.1'
     lombok = '1.16.20'
     paperDb = '2.6'
     calligraphyVersion = '2.2.0'
