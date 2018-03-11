@@ -2,6 +2,7 @@ package com.android.kohaku.instaln.ui.novelList;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Novel;
@@ -23,12 +24,13 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvit_novel_list_layout);
         mNovelView = findViewById(R.id.novelView);
-        mPresenter.addNovel();
+        mPresenter.loadNovels();
     }
 
     @Override
     public void showNovels(List<Novel> novelList) {
         for (Novel novel: novelList) {
+            Log.v("monis novel: ", novel.getNovelName());
             mNovelView.addView(new NovelItem(this, novel));
         }
     }
