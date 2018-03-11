@@ -8,10 +8,9 @@ import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.data.database.PaperDB;
 import com.android.kohaku.instaln.data.network.ArticleHelper;
 import com.android.kohaku.instaln.data.network.ChapterHelper;
+import com.android.kohaku.instaln.utils.InstaUtils;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,27 +30,22 @@ public class AppDataManager implements DataManager {
 
     @Override
     public <T> T readBook(String bookName, String key) {
-        return mPaperDB.readBook(bookName, key);
+        return mPaperDB.readBook(bookName, InstaUtils.urlEncode(key));
     }
 
     @Override
     public <T> Book writeBook(String bookName, String key, T value) {
-        try {
-            key = URLEncoder.encode(key, "utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return mPaperDB.writeBook(bookName, key, value);
+        return mPaperDB.writeBook(bookName, InstaUtils.urlEncode(key), value);
     }
 
     @Override
     public boolean contains(String bookName, String key) {
-        return mPaperDB.contains(bookName, key);
+        return mPaperDB.contains(bookName, InstaUtils.urlEncode(key));
     }
 
     @Override
     public void delete(String bookName, String key) {
-        mPaperDB.delete(bookName, key);
+        mPaperDB.delete(bookName, InstaUtils.urlEncode(key));
     }
 
     @Override

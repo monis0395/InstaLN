@@ -26,46 +26,43 @@ public class NovelListPresenter extends BasePresenter<NovelListContract.View>
 
     @Override
     public void loadNovels() {
-        TinyTask.perform(new Something<List<Novel>>() {
-            @Override
-            public List<Novel> whichDoes() throws Exception {
-                return getDataManager().getAllNovel();
-            }
-        }).whenDone(new DoThis<List<Novel>>() {
-            @Override
-            public void ifOK(List<Novel> novelList) {
-                getView().showNovels(novelList);
-            }
-            @Override
-            public void ifNotOK(Exception e) {
-                Log.e("monis", "exception", e);
-            }
-        }).go();
-
+        Log.v("monis", "loadNovels");
+        List<Novel> novelList = getDataManager().getAllNovel();
+        getView().showNovels(novelList);
+//        TinyTask.perform(new Something<List<Novel>>() {
+//            @Override
+//            public List<Novel> whichDoes() {
+//                Log.v("monis", "getAllNovel");
+//                return getDataManager().getAllNovel();
+//            }
+//        }).whenDone(new DoThis<List<Novel>>() {
+//            @Override
+//            public void ifOK(List<Novel> novelList) {
+//                getView().showNovels(novelList);
+//            }
+//
+//            @Override
+//            public void ifNotOK(Exception e) {
+//                Log.e("monis", "exception", e);
+//            }
+//        }).go();
     }
 
     @Override
-    public void addNovel() {
+    public void addNovel(final String novelName, final String novelUrl) {
 
-        Something<Boolean> something = new Something<Boolean>() {
+        TinyTask.perform(new Something<Boolean>() {
             @Override
             public Boolean whichDoes() {
                 try {
-                    getDataManager().addNovel("Overgeared",
-                            "http://novelplanet.com/Novel/Overgeared/");
-                    getDataManager().addNovel("Library of Heaven's Path",
-                            "http://novelplanet.com/Novel/Library-of-Heaven-s-Path");
-                    getDataManager().addNovel("The Book Eating Magician",
-                            "http://novelplanet.com/Novel/The-Book-Eating-Magician");
-                    return Boolean.TRUE;
+                    Log.v("monis", "addNovel: " + novelName);
+                    getDataManager().addNovel(novelName, novelUrl);
                 } catch (IOException e) {
-                    e.printStackTrace();
-                    return Boolean.FALSE;
+                    Log.e("MYAPP", "exception", e);
                 }
+                return Boolean.TRUE;
             }
-        };
-
-        DoThis<Boolean> doThis = new DoThis<Boolean>() {
+        }).whenDone(new DoThis<Boolean>() {
             @Override
             public void ifOK(Boolean aBoolean) {
                 loadNovels();
@@ -75,11 +72,7 @@ public class NovelListPresenter extends BasePresenter<NovelListContract.View>
             public void ifNotOK(Exception e) {
                 Log.e("MYAPP", "exception", e);
             }
-        };
-        getView().showLoading();
-
-        TinyTask.perform(something).whenDone(doThis).go();
-        getView().hideLoading();
+        }).go();
 
     }
 }

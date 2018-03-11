@@ -12,12 +12,15 @@ import java.util.List;
 public interface NovelListContract {
     interface View extends BaseContract.View {
         void showNovels(List<Novel> novelList);
+
         void novelClicked(Novel novel);
     }
 
     interface Presenter extends BaseContract.Presenter<View> {
         void loadNovels();
-        void addNovel();
+
+        void addNovel(final String novelName, final String novelUrl);
+
     }
 
 }

@@ -29,7 +29,7 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
         setContentView(R.layout.activity_novel);
         setUnBinder(ButterKnife.bind(this));
 
-        String novelName = getIntent().getStringExtra("novel");
+        String novelName = getIntent().getStringExtra("novelName");
         Novel novel = getDataManager().readBook(AppDataManager.NOVEL_BOOK, novelName);
 
         novelNameTxt.setText(novel.getNovelName());
