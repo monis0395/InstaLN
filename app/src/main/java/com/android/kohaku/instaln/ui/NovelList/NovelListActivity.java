@@ -9,7 +9,7 @@ import com.android.kohaku.instaln.ui.base.BaseActivity;
  * Created by monis.q on 04-03-2018.
  */
 
-public class NovelListActivtiy extends BaseActivity<NovelListPresenter>
+public class NovelListActivity extends BaseActivity<NovelListPresenter>
         implements NovelListContract.View {
 
 
