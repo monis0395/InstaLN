@@ -21,7 +21,7 @@ public class NovelListPresenter extends BasePresenter<NovelListContract.View>
 
     @Override
     public void loadNovels() {
-        List<Novel> novelList = Collections.emptyList();
+        List<Novel> novelList = new ArrayList<>();
         novelList.add(new Novel("Overgeared","http://novelplanet.com/Novel/Overgeared"));
         novelList.add(new Novel("Library of Heaven's Path","http://novelplanet.com/Novel/Library-of-Heaven-s-Path"));
         novelList.add(new Novel("The Book Eating Magician","http://novelplanet.com/Novel/The-Book-Eating-Magician"));
