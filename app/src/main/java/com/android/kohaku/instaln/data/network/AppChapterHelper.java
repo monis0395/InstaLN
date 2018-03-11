@@ -7,14 +7,14 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppChapterHelper implements ChapterHelper {
 
     @Override
     public List<Chapter> getAllChaptersList(String urlString) throws IOException {
-        List<Chapter> chapterList = Collections.emptyList();
+        List<Chapter> chapterList = new ArrayList<>();
         String chapterUrl;
         int chapterNumber = 0;
 

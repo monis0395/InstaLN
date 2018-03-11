@@ -8,7 +8,7 @@ import com.android.kohaku.instaln.data.network.ArticleHelper;
 import com.android.kohaku.instaln.data.network.ChapterHelper;
 
 import java.io.IOException;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import io.paperdb.Book;
@@ -81,7 +81,7 @@ public class AppDataManager implements DataManager {
     @Override
     public List<Novel> getAllNovel() {
         List<String> novelNames = getAllKeys(NOVEL_BOOK);
-        List<Novel> novelList = Collections.emptyList();
+        List<Novel> novelList = new ArrayList<>();
         Novel novelTempObject;
         for (String novelKey : novelNames) {
             novelTempObject = readBook(NOVEL_BOOK, novelKey);

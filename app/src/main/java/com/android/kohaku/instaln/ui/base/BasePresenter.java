@@ -16,7 +16,6 @@ public class BasePresenter<V extends BaseContract.View>
         mDataManager = dataManager;
     }
 
-
     @Override
     public V getView() {
         return mMvpView;
