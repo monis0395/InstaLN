@@ -1,10 +1,13 @@
 package com.android.kohaku.instaln.ui.novelList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.TextView;
 
 import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Novel;
+import com.android.kohaku.instaln.ui.base.BaseActivity;
+import com.mindorks.placeholderview.annotations.Click;
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;
 import com.mindorks.placeholderview.annotations.View;
@@ -30,5 +33,10 @@ public class NovelItem {
     @Resolve
     private void onResolved() {
         novelNameTxt.setText(mNovel.getNovelName());
+    }
+
+    @Click(R.id.novelName)
+    private void openNovel() {
+        ((NovelListContract.View) mContext).novelClicked(mNovel);
     }
 }

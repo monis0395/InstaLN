@@ -9,9 +9,10 @@ import java.util.List;
  * Created by monis.q on 04-03-2018.
  */
 
-public class NovelListContract {
+public interface NovelListContract {
     interface View extends BaseContract.View {
         void showNovels(List<Novel> novelList);
+        void novelClicked(Novel novel);
     }
 
     interface Presenter extends BaseContract.Presenter<View> {
