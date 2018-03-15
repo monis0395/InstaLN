@@ -30,8 +30,11 @@ task clean(type: Delete) {
 //Define version in a single place
 ext {
     compileSdkVersion = 26
-    minSdkVersion = 16
+    minSdkVersion = 24
     targetSdkVersion = 26
+
+    rxandroid = '2.0.2'
+    rxjava = '2.1.10'
 
     butterKnife = '8.8.1'
     tinyTask = 'v1.0.1'
