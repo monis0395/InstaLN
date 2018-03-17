@@ -8,7 +8,7 @@ import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
 import com.android.kohaku.instaln.ui.novel.NovelActivity;
-import com.android.kohaku.instaln.ui.novelList.model.NovelItem;
+import com.android.kohaku.instaln.ui.novelList.model.NovelListItem;
 import com.mindorks.placeholderview.PlaceHolderView;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
     public void showNovels(List<Novel> novelList) {
         mNovelView.removeAllViews();
         for (Novel novel : novelList) {
-            mNovelView.addView(new NovelItem(this, novel));
+            mNovelView.addView(new NovelListItem(this, novel));
         }
     }
 

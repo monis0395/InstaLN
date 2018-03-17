@@ -7,6 +7,7 @@ import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
+import com.mindorks.placeholderview.PlaceHolderView;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
     @BindView(R.id.summaryDetails)
     TextView summaryDetailsTxt;
 
+    PlaceHolderView mChaptersListView;
     protected NovelPresenter mPresenter;
 
     @Override
@@ -28,6 +30,7 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novel);
         setUnBinder(ButterKnife.bind(this));
+        mChaptersListView = findViewById(R.id.chaptersListView);
         mPresenter = createPresent();
         mPresenter.onAttach(this);
 
@@ -44,6 +47,10 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
 
     @Override
     public void showChapters(List<Chapter> chapterList) {
+        mChaptersListView.removeAllViews();
+        for (Chapter chapter : chapterList) {
+//            mChaptersListView.addView(new NovelListItem(this, chapter));
+        }
 
     }
 

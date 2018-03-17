@@ -35,5 +35,10 @@
             android:text="Summary Details"
             android:textSize="18sp" />
 
+        <com.mindorks.placeholderview.PlaceHolderView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chaptersListView"/>
+
     </LinearLayout>
 </ScrollView>

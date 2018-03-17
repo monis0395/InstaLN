@@ -16,7 +16,7 @@ import com.mindorks.placeholderview.annotations.View;
  */
 
 @Layout(R.layout.novel_list_item)
-public class NovelItem {
+public class NovelListItem {
 
     @View(R.id.novelName)
     TextView novelNameTxt;
@@ -24,7 +24,7 @@ public class NovelItem {
     private Context mContext;
     private Novel mNovel;
 
-    public NovelItem(Context context, Novel novel) {
+    public NovelListItem(Context context, Novel novel) {
         mContext = context;
         mNovel = novel;
     }
