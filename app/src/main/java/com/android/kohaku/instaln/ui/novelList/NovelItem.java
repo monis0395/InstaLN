@@ -20,7 +20,7 @@ import com.mindorks.placeholderview.annotations.View;
 public class NovelItem {
 
     @View(R.id.novelName)
-    private TextView novelNameTxt;
+    TextView novelNameTxt;
 
     private Context mContext;
     private Novel mNovel;
@@ -31,12 +31,12 @@ public class NovelItem {
     }
 
     @Resolve
-    private void onResolved() {
+    public void onResolved() {
         novelNameTxt.setText(mNovel.getNovelName());
     }
 
     @Click(R.id.novelName)
-    private void openNovel() {
+    public void openNovel() {
         ((NovelListContract.View) mContext).novelClicked(mNovel);
     }
 }

@@ -1,15 +1,12 @@
 package com.android.kohaku.instaln.ui.novel;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
 import android.widget.TextView;
 
 import com.android.kohaku.instaln.R;
-import com.android.kohaku.instaln.data.AppDataManager;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
-import com.android.kohaku.instaln.utils.InstaUtils;
 
 import java.util.List;
 

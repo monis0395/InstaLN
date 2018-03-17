@@ -10,7 +10,6 @@ import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
 import com.android.kohaku.instaln.ui.novel.NovelActivity;
 import com.mindorks.placeholderview.PlaceHolderView;
-import com.mindorks.placeholderview.Utils;
 
 import java.util.List;
 
@@ -36,8 +35,8 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
 
     @Override
     public void showNovels(List<Novel> novelList) {
+        mNovelView.removeAllViews();
         for (Novel novel : novelList) {
-            Log.v("monis",novel.getNovelName());
             mNovelView.addView(new NovelItem(this, novel));
         }
     }

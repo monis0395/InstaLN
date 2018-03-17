@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.android.kohaku.instaln.ui.novel.NovelActivity"
-    android:padding="10dp">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/novelName"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Novel Name"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:paddingBottom="0dp"
+        tools:context="com.android.kohaku.instaln.ui.novel.NovelActivity">
 
-    <TextView
-        android:id="@+id/summaryDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/novelName"
-        android:layout_alignRight="@+id/novelName"
-        android:layout_below="@+id/summary"
-        android:text="Summary Details"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="131dp" />
 
-    <TextView
-        android:id="@+id/summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/novelName"
-        android:layout_alignLeft="@+id/summaryDetails"
-        android:layout_alignStart="@+id/summaryDetails"
-        android:layout_marginBottom="0dp"
-        android:text="Summary"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="104dp" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/novelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Novel Name"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Summary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/summaryDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Summary Details"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -41,7 +41,7 @@ ext {
     lombok = '1.16.20'
     paperDb = '2.6'
     calligraphyVersion = '2.2.0'
-    placeholderviewVersion = '0.7.3'
+    placeholderviewVersion = '1.0.0'
     androidUtils = '3.0.32'
     crux = '2.0.1'
 }

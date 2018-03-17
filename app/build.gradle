@@ -59,7 +59,8 @@ dependencies {
     implementation "uk.co.chrisjenx:calligraphy:$rootProject.calligraphyVersion"
 
     // swipe view
-    implementation "com.mindorks:placeholderview:$rootProject.placeholderviewVersion"
+    compile "com.mindorks.android:placeholderview:$rootProject.placeholderviewVersion"
+    annotationProcessor "com.mindorks.android:placeholderview-compiler:$rootProject.placeholderviewVersion"
 
     // readability
     implementation "com.github.chimbori:crux:$rootProject.crux"
