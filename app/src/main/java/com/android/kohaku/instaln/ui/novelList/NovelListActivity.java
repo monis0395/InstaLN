@@ -22,11 +22,15 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
 
     PlaceHolderView mNovelView;
 
+    NovelListPresenter mPresenter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvit_novel_list_layout);
-        mNovelView = findViewById(R.id.novelView);
+        mPresenter = createPresent();
+        mPresenter.onAttach(this);
+        mNovelView = findViewById(R.id.novelListView);
 //        mPresenter.addNovel("Overgeared", "http://novelplanet.com/Novel/Overgeared/");
 //        mPresenter.addNovel("Library of Heaven's Path", "http://novelplanet.com/Novel/Library-of-Heaven-s-Path");
 //        mPresenter.addNovel("The Book Eating Magician", "http://novelplanet.com/Novel/The-Book-Eating-Magician");
@@ -51,5 +55,11 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
     @Override
     protected NovelListPresenter createPresent() {
         return new NovelListPresenter(getDataManager());
+    }
+
+    @Override
+    protected void onDestroy() {
+        mPresenter.onDetach();
+        super.onDestroy();
     }
 }

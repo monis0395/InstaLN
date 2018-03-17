@@ -21,11 +21,15 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
     @BindView(R.id.summaryDetails)
     TextView summaryDetailsTxt;
 
+    protected NovelPresenter mPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novel);
         setUnBinder(ButterKnife.bind(this));
+        mPresenter = createPresent();
+        mPresenter.onAttach(this);
 
         setUp();
     }
@@ -56,5 +60,11 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
     @Override
     protected NovelPresenter createPresent() {
         return new NovelPresenter(getDataManager());
+    }
+
+    @Override
+    protected void onDestroy() {
+        mPresenter.onDetach();
+        super.onDestroy();
     }
 }

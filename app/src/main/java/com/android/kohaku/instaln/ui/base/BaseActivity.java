@@ -25,7 +25,6 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends App
         implements BaseContract.View {
 
     private ProgressDialog mProgressDialog;
-    protected P mPresenter;
     private Unbinder mUnBinder;
 
     protected abstract P createPresent();
@@ -33,8 +32,6 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends App
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = createPresent();
-        mPresenter.onAttach(this);
     }
 
     @Override
@@ -103,7 +100,6 @@ public abstract class BaseActivity<P extends BaseContract.Presenter> extends App
         if (mUnBinder != null) {
             mUnBinder.unbind();
         }
-        mPresenter.onDetach();
         super.onDestroy();
     }
 }
