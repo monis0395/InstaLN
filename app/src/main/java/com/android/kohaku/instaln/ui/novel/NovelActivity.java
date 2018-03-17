@@ -32,6 +32,10 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
         setContentView(R.layout.activity_novel);
         setUnBinder(ButterKnife.bind(this));
         mChaptersListView = findViewById(R.id.chaptersListView);
+
+        mChaptersListView.getBuilder()
+                .setHasFixedSize(false)
+                .setItemViewCacheSize(100);
         mPresenter = createPresent();
         mPresenter.onAttach(this);
 
@@ -44,6 +48,7 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
 
         novelNameTxt.setText(novel.getNovelName());
         summaryDetailsTxt.setText(novel.getNovelSummary().getContent());
+        mPresenter.loadChapters(novel);
     }
 
     @Override
@@ -52,7 +57,6 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
         for (Chapter chapter : chapterList) {
             mChaptersListView.addView(new ChapterListItem(this, chapter));
         }
-
     }
 
     @Override

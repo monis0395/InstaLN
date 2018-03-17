@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,11 +12,11 @@
         android:paddingBottom="0dp"
         tools:context="com.android.kohaku.instaln.ui.novel.NovelActivity">
 
-
         <TextView
             android:id="@+id/novelName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:text="Novel Name"
             android:textSize="24sp" />
 
@@ -24,7 +24,8 @@
             android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_below="@id/novelName"
+            android:layout_marginTop="14dp"
             android:text="Summary"
             android:textSize="20sp" />
 
@@ -32,13 +33,16 @@
             android:id="@+id/summaryDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/summary"
             android:text="Summary Details"
             android:textSize="18sp" />
 
         <com.mindorks.placeholderview.PlaceHolderView
+            android:id="@+id/chaptersListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/chaptersListView"/>
+            android:layout_below="@id/summaryDetails"
+            android:layout_marginTop="14dp"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.android.kohaku.instaln.data.DataManager;
 import com.android.kohaku.instaln.ui.base.BasePresenter;
 
+import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -32,10 +33,10 @@ public class NovelListPresenter extends BasePresenter<NovelListContract.View>
     @Override
     public void addNovel(final String novelName, final String novelUrl) {
 
-        Single.fromCallable(() -> getDataManager().addNovel(novelName, novelUrl))
+        Completable.fromAction(() -> getDataManager().addNovel(novelName, novelUrl))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError(throwable -> Log.e("monis", "addNovel exception", throwable))
-                .subscribe(novel -> loadNovels());
+                .subscribe(this::loadNovels);
     }
 }
