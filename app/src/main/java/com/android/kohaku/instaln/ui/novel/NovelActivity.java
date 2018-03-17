@@ -7,6 +7,7 @@ import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
+import com.android.kohaku.instaln.ui.novel.model.ChapterListItem;
 import com.mindorks.placeholderview.PlaceHolderView;
 
 import java.util.List;
@@ -49,7 +50,7 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
     public void showChapters(List<Chapter> chapterList) {
         mChaptersListView.removeAllViews();
         for (Chapter chapter : chapterList) {
-//            mChaptersListView.addView(new NovelListItem(this, chapter));
+            mChaptersListView.addView(new ChapterListItem(this, chapter));
         }
 
     }
