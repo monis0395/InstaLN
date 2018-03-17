@@ -1,12 +1,11 @@
-package com.android.kohaku.instaln.ui.novelList;
+package com.android.kohaku.instaln.ui.novelList.model;
 
 import android.content.Context;
-import android.content.Intent;
 import android.widget.TextView;
 
 import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Novel;
-import com.android.kohaku.instaln.ui.base.BaseActivity;
+import com.android.kohaku.instaln.ui.novelList.NovelListContract;
 import com.mindorks.placeholderview.annotations.Click;
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;

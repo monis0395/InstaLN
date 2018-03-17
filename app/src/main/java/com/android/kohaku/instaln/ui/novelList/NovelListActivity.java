@@ -3,12 +3,12 @@ package com.android.kohaku.instaln.ui.novelList;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
 import com.android.kohaku.instaln.ui.novel.NovelActivity;
+import com.android.kohaku.instaln.ui.novelList.model.NovelItem;
 import com.mindorks.placeholderview.PlaceHolderView;
 
 import java.util.List;
