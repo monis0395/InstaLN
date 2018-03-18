@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">InstaLN</string>
     <string name="some_error">Some Error Occurred!</string>
+
+    <string name="title_activity_chapter">ChapterActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

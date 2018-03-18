@@ -63,7 +63,8 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
 
     @Override
     public void chapterClicked(Chapter chapter) {
-
+        String novelName = novelNameTxt.getText().toString();
+        String chapterUrl = chapter.getChapterUrl();
     }
 
     @Override
