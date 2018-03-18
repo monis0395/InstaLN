@@ -17,8 +17,9 @@ public interface ChapterContract {
 
     interface Presenter extends BaseContract.Presenter<View> {
         Chapter getChapter(String novelName, String chapterNumber);
-        Chapter getNextChapter(String novelName, String chapterNumber);
-        Chapter getPreviousChapter(String novelName, String chapterNumber);
-        void loadContent(Chapter chapter);
+        Content getContent(String chapterUrl);
+        void loadContent(Chapter chapter, Content content);
+        void loadNextChapter(String novelName, String chapterNumber);
+        void loadPreviousChapter(String novelName, String chapterNumber);
     }
 }

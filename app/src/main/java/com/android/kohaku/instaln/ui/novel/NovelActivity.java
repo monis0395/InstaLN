@@ -1,5 +1,6 @@
 package com.android.kohaku.instaln.ui.novel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -7,6 +8,7 @@ import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
+import com.android.kohaku.instaln.ui.chapter.ChapterActivity;
 import com.android.kohaku.instaln.ui.novel.model.ChapterListItem;
 import com.mindorks.placeholderview.PlaceHolderView;
 
@@ -64,7 +66,12 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
     @Override
     public void chapterClicked(Chapter chapter) {
         String novelName = novelNameTxt.getText().toString();
-        String chapterUrl = chapter.getChapterUrl();
+        String chapterNumber = String.valueOf(chapter.getChapterNumber());
+
+        Intent i = new Intent(this, ChapterActivity.class);
+        i.putExtra("novelName", novelName);
+        i.putExtra("chapterNumber", chapterNumber);
+        startActivity(i);
     }
 
     @Override
