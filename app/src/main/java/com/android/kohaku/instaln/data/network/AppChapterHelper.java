@@ -22,14 +22,17 @@ public class AppChapterHelper implements ChapterHelper {
 
         for (Element chapterElement : elements) {
             chapterUrl = chapterElement.absUrl("href");
-            chapterNumber++;
-            if (chapterUrl.contains(urlString)) {
+            if (chapterUrl.contains(urlString) && !chapterUrl.endsWith("/#")) {
+                chapterNumber++;
                 chapterList.add(new Chapter(
                         chapterElement.text(),
                         chapterUrl,
                         chapterNumber
                 ));
             }
+        }
+        for (Chapter chapter: chapterList) {
+            chapter.setChapterNumber(chapterNumber--);
         }
         return chapterList;
     }

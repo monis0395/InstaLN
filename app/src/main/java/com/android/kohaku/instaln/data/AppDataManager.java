@@ -107,7 +107,7 @@ public class AppDataManager implements DataManager {
             chapters.add(chapterTempObject);
         }
         return chapters;
-    };
+    }
 
     @Override
     public List<Chapter> getAllChaptersList(String urlString) throws IOException {
