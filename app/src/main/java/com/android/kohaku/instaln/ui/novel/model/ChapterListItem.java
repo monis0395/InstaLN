@@ -42,7 +42,6 @@ public class ChapterListItem {
 
     @Click(R.id.chapterItem)
     public void chapterNameClicked() {
-        Utils.showToast(mContext, "chapterClicked " + mChapter.getChapterUrl(), Toast.LENGTH_SHORT);
-//        ((NovelContract.View) mContext).chapterClicked(mChapter);
+        ((NovelContract.View) mContext).chapterClicked(mChapter);
     }
 }

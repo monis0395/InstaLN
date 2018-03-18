@@ -22,8 +22,6 @@ public class ChapterActivity extends BaseActivity<ChapterPresenter> implements C
     TextView contentTxt;
 
     protected ChapterPresenter mPresenter;
-    protected Chapter mChapter;
-    protected Content mContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +37,16 @@ public class ChapterActivity extends BaseActivity<ChapterPresenter> implements C
     private void setUp() {
         String novelName = getIntent().getStringExtra("novelName");
         String chapterNumber = getIntent().getStringExtra("chapterNumber");
-        mChapter = mPresenter.getChapter(novelName, chapterNumber);
-        mContent = mPresenter.getContent(mChapter.getChapterUrl());
 
-        mPresenter.loadContent(mChapter, mContent);
+        mPresenter.loadContent(novelName, chapterNumber);
     }
 
     @Override
     public void showContent(Chapter chapter, Content content) {
         chapterNameTxt.setText(chapter.getChapterName());
+
         Spanned parsedContent = Html.fromHtml(content.getContent(),
                 Html.FROM_HTML_MODE_COMPACT);
-
         contentTxt.setText(parsedContent);
     }
 
