@@ -8,7 +8,7 @@ import com.android.kohaku.instaln.ui.base.BaseContract;
  * Created by monis.q on 18-03-2018.
  */
 
-public class ChapterContract {
+public interface ChapterContract {
     interface View extends BaseContract.View {
         void showContent(Chapter chapter, Content content);
         void loadNextChapter(Chapter chapter);
