@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">InstaLN</string>
     <string name="some_error">Some Error Occurred!</string>
+    <string name="chapter_content">Chapter Content</string>
+    <string name="novel_name">Novel Name</string>
+    <string name="summary">Summary</string>
+    <string name="summary_details">Summary Details</string>
+    <string name="chapter_number">1</string>
+    <string name="chapter_name">Chapter Name</string>
+    <string name="novel_name">Novel Name</string>
 
 </resources>
