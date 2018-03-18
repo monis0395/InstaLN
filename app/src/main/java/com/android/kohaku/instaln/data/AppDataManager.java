@@ -57,8 +57,11 @@ public class AppDataManager implements DataManager {
     public void updateChapters(Novel novel) throws IOException {
         String bookName = novel.getNovelName();
         for (Chapter chapter : getAllChaptersList(novel.getNovelUrl())) {
-            Log.v("monis", "updateChapters chapterUrl: "+ chapter.getChapterUrl());
-            writeBook(bookName, chapter.getChapterUrl(), chapter);
+            Log.v("monis", "updateChapters chapterUrl: " + chapter.getChapterUrl());
+
+            writeBook(bookName,
+                    String.valueOf(chapter.getChapterNumber()),
+                    chapter);
         }
     }
 
@@ -67,8 +70,10 @@ public class AppDataManager implements DataManager {
         Novel novel = new Novel(novelName, urlString);
         novel.setNovelSummary(getContent(urlString));
         updateChapters(novel);
-        writeBook(NOVEL_BOOK, novelName, novel);//Todo: append a unique string to novelName
-        Log.v("monis", "Novel added: "+ novel.getNovelName());
+        writeBook(NOVEL_BOOK,
+                novelName,
+                novel);//Todo: append a unique string to novelName
+        Log.v("monis", "Novel added: " + novel.getNovelName());
         return novel;
     }
 
@@ -89,7 +94,7 @@ public class AppDataManager implements DataManager {
         List<Novel> novelList = new ArrayList<>();
         Novel novelTempObject;
         for (String novelKey : novelNames) {
-            Log.v("monis", "getAllNovel novelkey: "+ novelKey);
+            Log.v("monis", "getAllNovel novelkey: " + novelKey);
             novelTempObject = readBook(NOVEL_BOOK, novelKey);
             novelList.add(novelTempObject);
         }
