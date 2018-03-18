@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
-        android:paddingBottom="0dp"
-        tools:context="com.android.kohaku.instaln.ui.novel.NovelActivity">
+        android:paddingBottom="0dp">
 
         <TextView
             android:id="@+id/novelName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:text="Novel Name"
             android:textSize="24sp" />
 
@@ -33,7 +30,6 @@
             android:id="@+id/summaryDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/summary"
             android:text="Summary Details"
             android:textSize="18sp" />
 
@@ -41,8 +37,7 @@
             android:id="@+id/chaptersListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/summaryDetails"
-            android:layout_marginTop="14dp"/>
+            android:layout_marginTop="14dp" />
 
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>

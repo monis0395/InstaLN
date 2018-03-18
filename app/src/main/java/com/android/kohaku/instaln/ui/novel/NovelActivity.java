@@ -33,9 +33,6 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
         setUnBinder(ButterKnife.bind(this));
         mChaptersListView = findViewById(R.id.chaptersListView);
 
-        mChaptersListView.getBuilder()
-                .setHasFixedSize(false)
-                .setItemViewCacheSize(100);
         mPresenter = createPresent();
         mPresenter.onAttach(this);
 
