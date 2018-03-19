@@ -41,7 +41,13 @@ public class ChapterPresenter extends BasePresenter<ChapterContract.View>
         final Chapter[] chapter = new Chapter[1];
         final Content[] content = new Content[1];
         Completable.fromAction(() -> {
+            Log.v("monis", "novelName " + novelName + " chapterNumber " + chapterNumber);
             chapter[0] = getChapter(novelName, chapterNumber);
+            if(chapter[0] == null) {
+                Log.e("monis", "chapter is null" + chapterNumber);
+                return;
+            }
+            Log.v("monis", chapter[0].toString());
             content[0] = getContent(chapter[0].getChapterUrl());
         })
                 .subscribeOn(Schedulers.io())

@@ -1,14 +1,19 @@
 package com.android.kohaku.instaln.ui.chapter;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.text.Html;
 import android.text.Spanned;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Content;
 import com.android.kohaku.instaln.ui.base.BaseActivity;
+import com.android.kohaku.instaln.utils.JsoupUtils;
+
+import org.jsoup.nodes.Document;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,8 +23,8 @@ public class ChapterActivity extends BaseActivity<ChapterPresenter> implements C
     @BindView(R.id.chapterName)
     TextView chapterNameTxt;
 
-    @BindView(R.id.content)
-    TextView contentTxt;
+    @BindView(R.id.contentWebView)
+    WebView contentWebView;
 
     protected ChapterPresenter mPresenter;
 
@@ -42,12 +47,14 @@ public class ChapterActivity extends BaseActivity<ChapterPresenter> implements C
     }
 
     @Override
-    public void showContent(Chapter chapter, Content content) {
+    public void showContent(@NonNull Chapter chapter, @NonNull Content content) {
         chapterNameTxt.setText(chapter.getChapterName());
-
-        Spanned parsedContent = Html.fromHtml(content.getContent(),
-                Html.FROM_HTML_MODE_COMPACT);
-        contentTxt.setText(parsedContent);
+        contentWebView.loadDataWithBaseURL(
+                        chapter.getChapterUrl(),
+                        content.getContent(),
+                        "text/html",
+                        "utf-8",
+                        null);
     }
 
     @Override

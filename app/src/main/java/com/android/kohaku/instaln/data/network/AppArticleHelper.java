@@ -16,7 +16,7 @@ public class AppArticleHelper implements ArticleHelper {
 
         return new Content(
                 article.title,
-                article.document.text()
+                article.document.toString()
         );
     }
 

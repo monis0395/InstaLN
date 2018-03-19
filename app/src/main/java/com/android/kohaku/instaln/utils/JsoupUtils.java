@@ -3,6 +3,7 @@ package com.android.kohaku.instaln.utils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.safety.Whitelist;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -63,5 +64,17 @@ public class JsoupUtils {
 
     public static String getElementString(Document document, String cssQuery) {
         return getElement(document, cssQuery).text();
+    }
+
+    public static String parsedHtml(String html) {
+        if(html==null)
+            return html;
+        Document document = Jsoup.parse(html);
+        //makes html() preserve linebreaks and spacing
+        document.outputSettings(new Document.OutputSettings().prettyPrint(false));
+        document.select("br").append("\\n");
+        document.select("p").prepend("\\n\\n");
+        String s = document.html().replaceAll("\\\\n", "\n");
+        return Jsoup.clean(s, "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
     }
 }
