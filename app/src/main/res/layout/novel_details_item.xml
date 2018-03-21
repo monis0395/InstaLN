@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:paddingTop="10dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
     android:id="@+id/chapterItem">
     <TextView
         android:id="@+id/novelName"
@@ -24,6 +26,7 @@
         android:id="@+id/summaryDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/summary_details"
         android:textSize="18sp" />
 

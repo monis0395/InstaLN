@@ -40,7 +40,7 @@ public class NovelPresenter extends BasePresenter<NovelContract.View>
 
     @Override
     public void loadChapters(Novel novel) {
-        Single.fromCallable(() -> getDataManager().getAllChapters(novel))
+        Single.fromCallable(() -> getDataManager().updateChapters(novel))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError(throwable -> Log.e("monis", "loadChapters exception", throwable))

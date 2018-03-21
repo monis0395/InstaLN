@@ -54,15 +54,16 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public void updateChapters(Novel novel) throws IOException {
+    public List<Chapter> updateChapters(Novel novel) throws IOException {
         String bookName = novel.getNovelName();
-        for (Chapter chapter : getAllChaptersList(novel.getNovelUrl())) {
+        List<Chapter> chapters = getAllChaptersList(novel.getNovelUrl());
+        for (Chapter chapter : chapters) {
             Log.v("monis", "updateChapters chapterUrl: " + chapter.getChapterUrl());
-
             writeBook(bookName,
                     String.valueOf(chapter.getChapterNumber()),
                     chapter);
         }
+        return chapters;
     }
 
     @Override
