@@ -1,5 +1,6 @@
 package com.android.kohaku.instaln.ui.chapter;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.android.kohaku.instaln.data.DataManager;
@@ -22,8 +23,11 @@ public class ChapterPresenter extends BasePresenter<ChapterContract.View>
         implements ChapterContract.Presenter {
 
 
-    public ChapterPresenter(DataManager dataManager) {
+    private Context mContext;
+
+    public ChapterPresenter(DataManager dataManager, Context context) {
         super(dataManager);
+        mContext = context;
     }
 
     @Override
@@ -40,15 +44,20 @@ public class ChapterPresenter extends BasePresenter<ChapterContract.View>
     public void loadContent(String novelName, String chapterNumber) {
         final Chapter[] chapter = new Chapter[1];
         final Content[] content = new Content[1];
+
+        Log.v("monis", "novelName " + novelName + " chapterNumber " + chapterNumber);
+
         Completable.fromAction(() -> {
-            Log.v("monis", "novelName " + novelName + " chapterNumber " + chapterNumber);
             chapter[0] = getChapter(novelName, chapterNumber);
             if(chapter[0] == null) {
-                Log.e("monis", "chapter is null" + chapterNumber);
-                return;
+                throw new Exception("Chapter is Null" + chapterNumber);
             }
-            Log.v("monis", chapter[0].toString());
-            content[0] = getContent(chapter[0].getChapterUrl());
+            content[0] = getDataManager().getContentFromDb(chapter[0].getChapterUrl());
+            if(content[0] == null && checkInternet(mContext)) {
+                    content[0] = getDataManager().getContent(chapter[0].getChapterUrl());
+            } else {
+                throw new Exception("Internet not Available");
+            }
         })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

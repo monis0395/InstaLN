@@ -79,14 +79,11 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Content getContent(String contentUrl) throws IOException {
+    public Content getContentFromDb(String contentUrl) throws IOException {
         if (contains(CONTENT_BOOK, contentUrl)) {
             return readBook(CONTENT_BOOK, contentUrl);
         }
-
-        Content content = mArticleHelper.getContent(contentUrl);
-        writeBook(CONTENT_BOOK, contentUrl, content);
-        return content;
+        return null;
     }
 
     @Override
@@ -118,5 +115,12 @@ public class AppDataManager implements DataManager {
     @Override
     public List<Chapter> getAllChaptersList(String urlString) throws IOException {
         return mChapterHelper.getAllChaptersList(urlString);
+    }
+
+    @Override
+    public Content getContent(String contentUrl) throws IOException {
+        Content content = mArticleHelper.getContent(contentUrl);
+        writeBook(CONTENT_BOOK, contentUrl, content);
+        return content;
     }
 }

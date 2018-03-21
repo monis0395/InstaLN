@@ -1,6 +1,7 @@
 package com.android.kohaku.instaln.data;
 
 import com.android.kohaku.instaln.data.Model.Chapter;
+import com.android.kohaku.instaln.data.Model.Content;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.data.database.PaperDB;
 import com.android.kohaku.instaln.data.network.ArticleHelper;
@@ -14,6 +15,8 @@ public interface DataManager extends ArticleHelper, ChapterHelper, PaperDB {
     public List<Chapter> updateChapters(Novel novel) throws IOException;
 
     public Novel addNovel(String novelName, String urlString) throws IOException;
+
+    public Content getContentFromDb(String contentUrl) throws IOException;
 
     public List<Novel> getAllNovel();
 

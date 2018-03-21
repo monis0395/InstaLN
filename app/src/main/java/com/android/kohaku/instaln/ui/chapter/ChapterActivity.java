@@ -62,6 +62,6 @@ public class ChapterActivity extends BaseActivity<ChapterPresenter> implements C
 
     @Override
     protected ChapterPresenter createPresent() {
-        return new ChapterPresenter(getDataManager());
+        return new ChapterPresenter(getDataManager(), this);
     }
 }
