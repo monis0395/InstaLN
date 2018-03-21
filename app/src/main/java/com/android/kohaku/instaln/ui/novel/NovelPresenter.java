@@ -57,6 +57,7 @@ public class NovelPresenter extends BasePresenter<NovelContract.View>
     @Override
     public void updateChapters(Novel novel) {
         if (!checkInternet(mContext)) {
+            //todo:show internet available
             return;
         }
         Completable.fromAction(() -> getDataManager().updateChapters(novel))

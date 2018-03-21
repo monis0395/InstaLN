@@ -56,6 +56,7 @@ public class ChapterPresenter extends BasePresenter<ChapterContract.View>
             if(content[0] == null && checkInternet(mContext)) {
                     content[0] = getDataManager().getContent(chapter[0].getChapterUrl());
             } else {
+                //todo:show retry net not available
                 throw new Exception("Internet not Available");
             }
         })

@@ -39,6 +39,7 @@ public class NovelListPresenter extends BasePresenter<NovelListContract.View>
     @Override
     public void addNovel(final String novelName, final String novelUrl) {
         if (!checkInternet(mContext)) {
+            //todo:show internet not available
             return;
         }
         Completable.fromAction(() -> getDataManager().addNovel(novelName, novelUrl))
