@@ -1,6 +1,11 @@
 package com.android.kohaku.instaln.ui.base;
 
+import android.content.Context;
+import android.util.Log;
+
 import com.android.kohaku.instaln.data.DataManager;
+
+import net.the4thdimension.android.Utils;
 
 /**
  * Created by monis.q on 04-03-2018.
@@ -29,6 +34,14 @@ public class BasePresenter<V extends BaseContract.View>
     @Override
     public void onDetach() {
         mMvpView = null;
+    }
+
+    public boolean checkInternet(Context context) {
+        boolean isInternetAvailable = Utils.isInternetAvailable(context);
+        if(!isInternetAvailable) {
+            Log.i("monis", "Internet is not Available");
+        }
+        return isInternetAvailable;
     }
 
     @Override

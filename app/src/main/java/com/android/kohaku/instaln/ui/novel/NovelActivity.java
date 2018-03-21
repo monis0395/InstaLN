@@ -69,7 +69,7 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
 
     @Override
     protected NovelPresenter createPresent() {
-        return new NovelPresenter(getDataManager());
+        return new NovelPresenter(getDataManager(), this);
     }
 
     @Override

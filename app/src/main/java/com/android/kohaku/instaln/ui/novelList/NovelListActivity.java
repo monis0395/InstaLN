@@ -54,7 +54,7 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
 
     @Override
     protected NovelListPresenter createPresent() {
-        return new NovelListPresenter(getDataManager());
+        return new NovelListPresenter(getDataManager(), this);
     }
 
     @Override

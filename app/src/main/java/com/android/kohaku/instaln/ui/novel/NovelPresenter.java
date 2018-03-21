@@ -1,5 +1,6 @@
 package com.android.kohaku.instaln.ui.novel;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.android.kohaku.instaln.data.DataManager;
@@ -7,6 +8,8 @@ import com.android.kohaku.instaln.data.Model.Chapter;
 import com.android.kohaku.instaln.data.Model.Novel;
 import com.android.kohaku.instaln.ui.base.BasePresenter;
 import com.android.kohaku.instaln.utils.InstaUtils;
+
+import net.the4thdimension.android.Utils;
 
 import java.io.IOException;
 import java.util.List;
@@ -29,8 +32,12 @@ import static com.android.kohaku.instaln.data.database.PaperDB.NOVEL_BOOK;
 
 public class NovelPresenter extends BasePresenter<NovelContract.View>
         implements NovelContract.Presenter {
-    public NovelPresenter(DataManager dataManager) {
+
+    private Context mContext;
+
+    public NovelPresenter(DataManager dataManager, Context context) {
         super(dataManager);
+        mContext = context;
     }
 
     @Override
@@ -40,7 +47,7 @@ public class NovelPresenter extends BasePresenter<NovelContract.View>
 
     @Override
     public void loadChapters(Novel novel) {
-        Single.fromCallable(() -> getDataManager().updateChapters(novel))
+        Single.fromCallable(() -> getDataManager().getAllChapters(novel))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError(throwable -> Log.e("monis", "loadChapters exception", throwable))
@@ -49,6 +56,9 @@ public class NovelPresenter extends BasePresenter<NovelContract.View>
 
     @Override
     public void updateChapters(Novel novel) {
+        if (!checkInternet(mContext)) {
+            return;
+        }
         Completable.fromAction(() -> getDataManager().updateChapters(novel))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

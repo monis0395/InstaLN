@@ -1,9 +1,12 @@
 package com.android.kohaku.instaln.ui.novelList;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.android.kohaku.instaln.data.DataManager;
 import com.android.kohaku.instaln.ui.base.BasePresenter;
+
+import net.the4thdimension.android.Utils;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
@@ -17,8 +20,11 @@ import io.reactivex.schedulers.Schedulers;
 public class NovelListPresenter extends BasePresenter<NovelListContract.View>
         implements NovelListContract.Presenter {
 
-    public NovelListPresenter(DataManager dataManager) {
+    private Context mContext;
+
+    public NovelListPresenter(DataManager dataManager, Context context) {
         super(dataManager);
+        mContext = context;
     }
 
     @Override
@@ -32,7 +38,9 @@ public class NovelListPresenter extends BasePresenter<NovelListContract.View>
 
     @Override
     public void addNovel(final String novelName, final String novelUrl) {
-
+        if (!checkInternet(mContext)) {
+            return;
+        }
         Completable.fromAction(() -> getDataManager().addNovel(novelName, novelUrl))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
