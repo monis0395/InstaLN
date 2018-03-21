@@ -27,10 +27,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <WebView
-            android:id="@+id/contentWebView"
+        <TextView
+            android:id="@+id/contentTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:lineSpacingExtra="6dp"
             android:textSize="20sp" />
 

@@ -48,9 +48,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
 
-    //background task
-    compile "com.github.inaka:TinyTask:$rootProject.tinyTask"
-
     compileOnly "org.projectlombok:lombok:$rootProject.lombok"
     annotationProcessor "org.projectlombok:lombok:$rootProject.lombok"
     // database

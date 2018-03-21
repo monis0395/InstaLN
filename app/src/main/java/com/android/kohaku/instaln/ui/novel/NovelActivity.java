@@ -2,6 +2,8 @@ package com.android.kohaku.instaln.ui.novel;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spanned;
 import android.widget.TextView;
 
 import com.android.kohaku.instaln.R;
@@ -46,7 +48,10 @@ public class NovelActivity extends BaseActivity<NovelPresenter> implements Novel
         Novel novel = mPresenter.getNovel(novelName);
 
         novelNameTxt.setText(novel.getNovelName());
-        summaryDetailsTxt.setText(novel.getNovelSummary().getContent());
+
+        Spanned spanned = Html.fromHtml(novel.getNovelSummary().getContent(), Html.FROM_HTML_MODE_COMPACT);
+        summaryDetailsTxt.setText(spanned);
+
         mPresenter.loadChapters(novel);
     }
 
