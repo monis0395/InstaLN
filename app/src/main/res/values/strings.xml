@@ -231,4 +231,9 @@ Grid and Chris. The moment that the two big names were mentioned by the host, pe
                                                                    <p><p>Lauel's strong words once again rang in his mind.</p><p>This time, Hao was no longer offended.</p></p>
                                                                    <p><p>32 participants entered the second round. </p><p>Among them were the strongest candidates: Russia's Kraugel, Canada's Chris, Japan's Damian and Katz, the United States' Skull, Spain's Pon, and Britain's Regas.</p></p></string>
 
+    <string name="title_activity_fullscreen">FullScreen Activity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+
 </resources>
