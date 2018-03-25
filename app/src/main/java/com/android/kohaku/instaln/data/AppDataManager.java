@@ -12,6 +12,9 @@ import com.android.kohaku.instaln.utils.InstaUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import io.paperdb.Book;
@@ -103,6 +106,14 @@ public class AppDataManager implements DataManager {
     public List<Chapter> getAllChapters(Novel novel) {
         String bookName = novel.getNovelName();
         List<String> chapterKeys = getAllKeys(bookName);
+
+        chapterKeys.sort((String o1, String o2) -> {
+            if (o1.length() == o2.length()) {
+                return o2.compareTo(o1);
+            }
+            return o2.length() - o1.length();
+        });
+
         List<Chapter> chapters = new ArrayList<>();
         Chapter chapterTempObject;
         for (String chapterKey : chapterKeys) {
