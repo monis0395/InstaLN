@@ -40,11 +40,11 @@ public class FullscreenActivity extends AppCompatActivity implements ModalBottom
         toggle();    // Set up the user interaction to manually show or hide the system UI.
     }
 
-    @OnClick(R.id.dummy_button)
-    public void dummyButtonClicked() {
+    @OnClick(R.id.themeSettings)
+    public void themeSettingsButtonClicked() {
         controlClicked();
 
-        Log.v("monis", "dummyButton");
+        Log.v("monis", "themeSettings button");
         BottomSheetDialogFragment bottomSheetDialogFragment = new ModalBottom();
         bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
     }
