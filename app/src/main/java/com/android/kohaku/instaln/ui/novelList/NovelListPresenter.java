@@ -6,8 +6,6 @@ import android.util.Log;
 import com.android.kohaku.instaln.data.DataManager;
 import com.android.kohaku.instaln.ui.base.BasePresenter;
 
-import net.the4thdimension.android.Utils;
-
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;

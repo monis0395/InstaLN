@@ -2,7 +2,6 @@ package com.android.kohaku.instaln.ui.novel.model;
 
 import android.content.Context;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.kohaku.instaln.R;
 import com.android.kohaku.instaln.data.Model.Chapter;
@@ -11,8 +10,6 @@ import com.mindorks.placeholderview.annotations.Click;
 import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;
 import com.mindorks.placeholderview.annotations.View;
-
-import net.the4thdimension.android.Utils;
 
 /**
  * Created by monis.q on 17-03-2018.

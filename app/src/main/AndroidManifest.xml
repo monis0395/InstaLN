@@ -24,7 +24,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.novel.NovelActivity" />
-        <activity android:name=".ui.chapter.ChapterActivity"></activity>
+        <activity
+            android:name=".ui.chapter.ChapterActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_chapter"
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>
