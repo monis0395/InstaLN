@@ -1,7 +1,5 @@
 package com.android.kohaku.instaln.data.Model;
 
-import org.jsoup.nodes.Document;
-
 import lombok.Data;
 
 @Data
