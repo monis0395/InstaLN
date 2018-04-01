@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="icon_decrease_line_height">res/drawable-icons/icon_decrease_line_height.png
+    </drawable>
+    <drawable name="icon_decrease_margin">res/drawable-icons/icon_decrease_margin.png</drawable>
+    <drawable name="icon_decrease_text_size">res/drawable-icons/icon_decrease_text_size.png
+    </drawable>
+    <drawable name="icon_increase_line_height">res/drawable-icons/icon_increase_line_height.png
+    </drawable>
+    <drawable name="icon_increase_margin">res/drawable-icons/icon_increase_margin.png</drawable>
+    <drawable name="icon_increase_text_size">res/drawable-icons/icon_increase_text_size.png
+    </drawable>
+</resources>
