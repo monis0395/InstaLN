@@ -31,7 +31,7 @@ public class NovelListActivity extends BaseActivity<NovelListPresenter>
         mPresenter = createPresent();
         mPresenter.onAttach(this);
         mNovelView = findViewById(R.id.novelListView);
-        mPresenter.addNovel("Overgeared", "http://novelplanet.com/Novel/Overgeared/");
+//        mPresenter.addNovel("Overgeared", "http://novelplanet.com/Novel/Overgeared/");
 //        mPresenter.addNovel("Library of Heaven's Path", "http://novelplanet.com/Novel/Library-of-Heaven-s-Path");
 //        mPresenter.addNovel("The Book Eating Magician", "http://novelplanet.com/Novel/The-Book-Eating-Magician");
         mPresenter.loadNovels();
