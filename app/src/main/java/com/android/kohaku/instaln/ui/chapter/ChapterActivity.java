@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ChapterActivity extends BaseActivity<ChapterPresenter> implements ChapterContract.View {
+public class ChapterActivity extends BaseActivity<ChapterPresenter> implements ChapterContract.View, ChapterContract.Listeners{
 
     @BindView(R.id.chapterName)
     TextView chapterNameTxt;
@@ -85,6 +85,36 @@ public class ChapterActivity extends BaseActivity<ChapterPresenter> implements C
     @Override
     protected ChapterPresenter createPresent() {
         return new ChapterPresenter(getDataManager(), this);
+    }
+
+    @Override
+    public void increaseTextSize() {
+
+    }
+
+    @Override
+    public void decreaseTextSize() {
+
+    }
+
+    @Override
+    public void increaseMargin() {
+
+    }
+
+    @Override
+    public void decreaseMargin() {
+
+    }
+
+    @Override
+    public void increaseTextLineHeight() {
+
+    }
+
+    @Override
+    public void decreaseTextLineHeight() {
+
     }
 
 
