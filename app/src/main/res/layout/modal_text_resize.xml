@@ -5,9 +5,20 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_decrease_text_size"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:contentDescription="@string/decrease_text_size_of_content"
+        app:srcCompat="@drawable/icon_decrease_text_size" />
+
+    <ImageView
+        android:id="@+id/img_increase_text_size"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/increase_text_size_of_content"
         app:srcCompat="@drawable/icon_increase_text_size" />
+
+
 </LinearLayout>
